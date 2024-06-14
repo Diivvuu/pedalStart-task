@@ -6,14 +6,17 @@ const addTask = async (req, res) => {
 
   try {
     if (!task) return res.status(400).send("please enter the task");
-    if (task.length < 10) res.status(400).send("add minimum 10 char");
-    const taskDetail = await new Task({
+    if (task.length < 10) return res.status(400).send("add minimum 10 char");
+
+    const taskDetail = new Task({
       task,
       cretedBy: id,
     });
+
     await taskDetail.save();
     return res.status(200).send(taskDetail);
   } catch (error) {
+    console.error("Error adding task:", error);
     return res.status(400).send("task addition failed");
   }
 };
@@ -28,7 +31,31 @@ const getAllTasks = async (req, res) => {
   }
 };
 
-const editTask = async (req, res) => {};
+const editTask = async (req, res) => {
+  const { id } = req.params;
+  const { task, status } = req.body;
+
+  try {
+    if (!task || task.length < 10) {
+      return res.status(400).send("Task must be at least 10 characters long.");
+    }
+
+    const updatedTask = await Task.findByIdAndUpdate(
+      id,
+      { task, status },
+      { new: true }
+    );
+
+    if (!updatedTask) {
+      return res.status(404).send("Task not found.");
+    }
+
+    return res.status(200).send(updatedTask);
+  } catch (error) {
+    console.error("Error updating task:", error);
+    return res.status(500).send("Task update failed.");
+  }
+};
 
 const statusChange = async (req, res) => {
   const { id, string } = req.body;

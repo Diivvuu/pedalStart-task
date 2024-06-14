@@ -1,0 +1,25 @@
+.list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  width: 90%;
+  background-color: orange; /* Orange background */
+  padding: 1rem;
+  color: white; /* White text color */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Light shadow */
+  transition: box-shadow 0.3s ease;
+
+  &:hover {
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); /* Slightly stronger shadow on hover */
+  }
+
+  li {
+    flex: 1;
+  }
+
+  h5 {
+    font-size: 14px;
+  }
+}

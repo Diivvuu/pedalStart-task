@@ -1,0 +1,152 @@
+// Define some color variables
+$yellow: #ffa500;
+$backlog-color: #d57d24; // Light Orange
+$todo-color: #b58e19; // Coral
+$doing-color: #b8c027; // Yellow-Green
+$done-color: #0a9c19; // Green
+
+$button-font-color: #ffffff; // White color for text on buttons
+
+.menu {
+  list-style-type: none;
+  padding: 10px;
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 5px;
+
+  &.backlog {
+    background-color: $backlog-color;
+  }
+
+  &.todo {
+    background-color: $todo-color;
+  }
+
+  &.doing {
+    background-color: $doing-color;
+  }
+
+  &.done {
+    background-color: $done-color;
+  }
+
+  .expand-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    margin-left: 5px;
+    color: $button-font-color;
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: color 0.3s;
+
+    &:hover {
+      color: darken($button-font-color, 10%);
+    }
+  }
+
+  .action-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    margin-left: 5px;
+    color: $button-font-color;
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s;
+    border-radius: 4px;
+
+    &:hover {
+      background-color: lighten($button-font-color, 10%);
+      color: darken($button-font-color, 10%);
+    }
+
+    &:disabled {
+      color: rgba($button-font-color, 0.5);
+      cursor: not-allowed;
+    }
+  }
+
+  .modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+
+  .modal {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    max-width: 80%;
+    max-height: 80%;
+    overflow-y: auto;
+  }
+
+  .close-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: #0056b3;
+    }
+  }
+}
+.menu {
+  list-style-type: none;
+  padding: 10px;
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+
+  &:hover {
+    background-color: #f0f0f0; // Light gray background on hover
+  }
+}
+
+.completed {
+  background-color: #f0f0f0; // Light gray background for completed tasks
+}
+
+.expand-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  margin-left: 5px;
+  color: #007bff; // Blue color for expand button
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+@media (max-width: 768px) {
+  .menu {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .expand-button {
+    margin-left: 0;
+    margin-top: 5px;
+  }
+}

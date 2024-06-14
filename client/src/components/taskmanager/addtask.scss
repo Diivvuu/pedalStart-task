@@ -1,0 +1,90 @@
+.addtask {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+
+  form {
+    width: 70%;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  input {
+    padding: 10px 15px;
+    width: 30rem;
+    border: 2px solid #ffa500; // Yellow border
+    outline: none;
+    background-color: #fff;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: all 0.3s ease-in-out;
+
+    &:focus {
+      border-color: darken(#ffa500, 10%);
+      box-shadow: 0 0 10px rgba(255, 165, 0, 0.5);
+    }
+  }
+
+  .button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #ffa500; // Yellow button
+    color: #fff;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+
+    &:hover {
+      background-color: darken(#ffa500, 10%);
+      transform: scale(1.05);
+    }
+  }
+}
+.addtask {
+    width: 100%;
+  
+    form {
+      width: 70%;
+      margin: 3rem auto; // Centering form horizontally with margin
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  
+      input {
+        padding: 10px;
+        width: 100%;
+        border: none;
+        outline: none;
+        background-color: whitesmoke;
+        border-radius: 5px;
+        margin-bottom: 1rem;
+      }
+  
+      .button {
+        background-color: #ffa500; // Yellow background
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+        border-radius: 5px;
+        font-weight: 500;
+  
+        &:hover {
+          background-color: darken(#ffa500, 10%); // Darker yellow background on hover
+        }
+      }
+    }
+  }
+  
+@media (max-width: 768px) {
+  .addtask {
+    form {
+      width: 90%;
+    }
+  }
+}
