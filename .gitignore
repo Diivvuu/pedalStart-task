@@ -1,23 +1,23 @@
-# Directories
-/node_modules
+# Ignore node_modules directories across the project
 /client/node_modules
 /server/node_modules
 /database/node_modules
 
-# Environment variables
-/.env
+# Ignore environment variables
+.env
+/server/.env
 
-# Build files
+# Ignore build directories
 /client/build
 /server/build
 
-# Logs
+# Ignore log files
 *.log
 
-# IDE files
-.vscode
-.idea
+# Ignore IDE specific files
+.vscode/
+.idea/
 
-# OS generated files
+# Ignore OS generated files
 .DS_Store
 Thumbs.db
