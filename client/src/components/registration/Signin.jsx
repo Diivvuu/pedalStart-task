@@ -55,7 +55,7 @@ const Signin = () => {
 						/>
 					</div>
 					<div className='form-group'>
-						<button className='button'>Sing In</button>
+						<button className='button'>Sign In</button>
 					</div>
 				</form>
 			</div>

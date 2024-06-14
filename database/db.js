@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const mongoURI = "mongodb://127.0.0.1:27017/task-manager";
+const mongoURI = process.env.MONGODB_URI; // Use environment variable for MongoDB URI
 const options = {
   useNewUrlParser: true,
   useUnifiedTopology: true,
